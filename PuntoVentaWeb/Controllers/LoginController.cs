@@ -26,11 +26,11 @@ namespace PuntoVentaWeb.Controllers
                 //obtengo el usuario
                 var u = await  _userHelper.GetUserByEmailAsync(User.Identity.Name);
                 //verifico el rol del usuario
-                if (await _userHelper.IsUserInRoleAsync(u, "SuperAdmin"))
+                if (await _userHelper.IsUserInRoleAsync(u, "admin"))
                 {
                     return RedirectToAction("", "");
                 }
-                else
+                else if(await _userHelper.IsUserInRoleAsync(u,"vendedor"))
                 {
                     return RedirectToAction("index", "Venta");
                 }
@@ -47,13 +47,13 @@ namespace PuntoVentaWeb.Controllers
                 if (r.Succeeded)
                 {
                     var u = await _userHelper.GetUserByEmailAsync(viewModel.userName);
-                    if (u!= null)
+                    if (u != null)
                     {
                         if (await _userHelper.IsUserInRoleAsync(u, "admin"))
                         {
                            return RedirectToAction("", "");
                         }
-                        else
+                        else if(await _userHelper.IsUserInRoleAsync(u,"vendedor"))
                         {
                             return RedirectToAction("index","Venta");
                         }

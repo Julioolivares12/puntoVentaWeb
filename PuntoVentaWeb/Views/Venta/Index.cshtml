@@ -3,5 +3,51 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Venta</h1>
+<h1>Sistema de ventas</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="/" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="buscar producto" name="buscarRepuesto" value="" />
+
+                </div>
+                <button class="btn btn-outline-primary align-text-bottom">Buscar</button>
+            </form>
+
+            <table class="table table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <td>UPC</td>
+                        <td>Descripcion</td>
+                        <td>Cantidad</td>
+                        <td>Descuento</td>
+                        <td>Precio Unitario</td>
+                        <td>Precio total</td>
+                        <td>remover</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="txtIva">IVA: $</label>
+                <input type="text" class="form-control" name="txtIva" value=""  disabled="disabled"/>
+            </div> 
+            <div class="form-group">
+                <label for="txtSubTotal">Sub Total: $</label>
+                <input type="text" class="form-control" name="txtSubTotal" value="" disabled="disabled" />
+            </div>
+            <div class="form-group">
+                <label for="txtMontoTotal">Monto Total: $</label>
+                <input type="text" class="form-control" name="txtMontoTotal" value="" disabled="disabled" />
+            </div>
+            <div class="form-group">
+                <label for="txtConsolidado">Consolidado: $</label>
+                <input type="text" class="form-control" name="txtConsolidado" value="" disabled="disabled" />
+            </div>
+        </div>
+    </div>
+    <div></div>
+</div>
 
